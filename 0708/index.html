@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>HockeyPlay Record</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/record.css">
+<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/record.js"></script> 
+</head>
+
+<body>
+
+	<!-- S::main-->		
+	<div class="main_wrap">
+		<!-- S::Contents -->
+		<div class="contents">
+			<img class="logo" src="imgs/logo.svg" />
+			<h2>Record Sheet</h2>
+			
+			
+			<!-- S::ShootOut -->
+			<ul class="shootout">
+				<li><a href="#"> <h3 class="yellow_bg">경기종료</h3></a> </li>
+				<li><a href="#"> <h3 class="grey_bg">연장전</h3></a> </li>
+				<li><a href="javascript:shootout()"> <h3 class="red_bg">슛아웃</h3></a> </li>
+			</ul>
+			
+			<!-- E::ShootOut -->
+			
+			
+			
+			
+			<ul class="top">
+				<li>
+					<a href="javascript:team_name()">
+						<h3>양촌리 브라더스</h3>
+						<h4> HOME</h4>
+					</a>
+				</li>
+				<li><a href="javascript:score()"><h3> 00</h3></a></li>
+				<li><a href="javascript:timer()"><h3> 15:00</h3></a></li>
+				<li><a href="javascript:score()"><h3> 00</h3></a></li>
+				<li>
+					<a href="javascript:team_name()">
+						<h3>HC신길챔피온스</h3>
+						<h4> AWAY</h4>
+					</a>
+				</li>
+			</ul>
+			<ul class="middle">
+				<li class="goal"><a href="javascript:goal_BT()" ><h1>골(G)</h1></a></li>
+				<li class="goal"><a href="javascript:goal_BT()" ><h1>골(G)</h1></a></li>
+				<li class="penalty"><a href="javascript:penalty_BT()" ><h1>페널티(P)</h1></a></li>
+				<li class="penalty"><a href="javascript:penalty_BT()" ><h1>페널티(P)</h1></a></li>
+				<li class="goalie"><a href="javascript:goalie_BT()" ><h1>골리선방(H)</br>No.00 홍길동</h1></a></li>
+				<li class="goalie"><a href="javascript:goalie_BT()" ><h1>골리선방(A)</br>No.00 홍길동</h1></a></li>
+			</ul>
+
+
+		
+		</div>
+		<!-- E::Contents -->
+	</div>
+	<!-- E::main -->	
+	<!-- S::footer -->
+	<div class="footer">
+		<h5>Copyright &copy HOCKEYPLAY Corp. All Rights Reserved.</h5>
+	</div>
+	
+	
+	
+	
+<!-- S::popup style1 -->			
+<div id="team_name" class="overlay off" >
+	<div class="pop_cap">
+		<div class="popup_st1" >
+			<h2 class="title">선수명단</h2>
+			<a class="close" >&times;</a>
+			<div class="scrollcap">
+				<table class="pop_tb1">
+					<tr>
+						<td style="width:40%">배번(포지션)</td>
+						<td style="width:60%">이 름</td>
+					</tr>
+					<tr>
+						<td>00</td>
+						<td>홍길동</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<a class="pop_bt1" href="javascript:team_name_off()"  >확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- E:: popup style1 -->
+
+<!-- S::popup style2 -->	
+<div id="score" class="overlay off" >
+	<div class="pop_cap">
+		<div class="popup_st1" >
+			<h2 class="title">골 기록현황</h2>
+			<a class="close" >&times;</a>
+			<div class="scrollcap">
+				<table class="pop_tb1">
+					<tr>
+						<td style="width:50%;background:#6086f3">HOME</td>
+						<td style="width:50%;background:#f4bc1a">AWAY</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#" >
+								<h3>00:00:00</h3>
+								<h3>G 00번</h3>
+								<h3>A1 00번</h3>
+								<h3>A2 00번</h3>
+							</a>
+						</td>
+						<td>
+							<a href="#" >
+								<h3>00:00:00</h3>
+								<h3>G 00번</h3>
+								<h3>A1 00번</h3>
+								<h3>A2 00번</h3>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#" >
+
+							</a>
+						</td>
+						<td>
+							<a href="#" >
+
+							</a>
+						</td>
+					</tr>
+
+
+				</table>
+
+				<a class="pop_bt1" href="javascript:score_off()"  >확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- E:: popup style2 -->
+
+<!-- S::popup style3 -->	
+<div id="timer" class="overlay off" >
+	<div class="pop_cap">
+		<div class="popup_st1" >
+			<h2 class="title">경기시간 설정</h2>
+			<a class="close" >&times;</a>
+			<div class="scrollcap">
+				<div class="pop_bx1">
+					<h3>시간 : 00:00 흘러/정지</h3>
+					<h3>페널티1 : 00:00</h3>
+					<h3>페널티2 : 00:00</h3>
+					<h3>페널티3 : 00:00</h3>
+					<h3>페널티4 : 00:00</h3>
+				</div>
+								
+				<a class="pop_bt1" href="javascript:timer_off()"  >확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- E:: popup style3 -->
+
+<!-- S::popup style4 -->	
+<div id="goal_BT" class="overlay off" >
+	<div class="pop_cap">
+		<div class="popup_st1" >
+			<h2 class="title">Goal!!</h2>
+			<a class="close" >&times;</a>
+			<div class="scrollcap">
+				<table class="pop_tb1">
+					<tr>
+						<td class="gray_bg2 loText"  colspan="2" >팀명(HOME)</td>
+					</tr>
+					<tr>
+						<td class="hiText" style="width:40%">00:00:00</td>
+						<td class="hiText" style="width:60%">점수</td>
+					</tr>
+					<tr>
+						<td class="hiText gray_bg2 " style="width:40%">G</td>
+						<td class="hiText" style="width:60%"><input type ="text" value="00. 홍길동"/> </td>
+					</tr>
+					<tr>
+						<td class="hiText" >A1</td>
+						<td class="hiText" ><input type ="text" value="배번"/> </td>
+					</tr>
+					<tr>
+						<td class="hiText" >A2</td>
+						<td class="hiText" ><input type ="text" value="배번"/> </td>
+					</tr>
+
+				</table>
+								
+				<a class="pop_bt1" href="javascript:goal_BT_off()"  >확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- E:: popup style4 -->
+
+<!-- S::popup style5-->	
+<div id="penalty_BT" class="overlay off" >
+	<div class="pop_cap">
+		<div class="popup_st1" >
+			<h2 class="title">Penalty!</h2>
+			<a class="close" >&times;</a>
+			<div class="scrollcap">
+				<table class="pop_tb1">
+					<tr>
+						<td class="gray_bg2 loText"  colspan="2"  >팀명(HOME)</td>
+					</tr>
+					<tr>
+						<td rowspan="6" style="width:50%;background:#fff">
+							<input type ="text" value="" placeholder="배번입력" />
+						</td>
+					</tr>
+					<tr>
+						<td class="hiText" ><a href="#" >마이너</a></td>
+					</tr>
+					<tr>
+						<td class="hiText" ><a href="#" >메이저</a></td>
+					</tr>
+					<tr>
+						<td class="hiText" ><a href="#" >미스컨덕트</a></td>
+					</tr>
+					<tr>
+						<td class="hiText" ><a href="#" >게임미스컨덕트</a></td>
+					</tr>
+					<tr>
+						<td class="hiText" ><a href="#" >매치</a></td>
+					</tr>
+
+				</table>
+								
+				<a class="pop_bt1" href="javascript:penalty_sub_BT()"  >확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- E:: popup style5 -->
+
+
+<!-- S::popup style5_sub-->	
+<div id="penalty_sub_BT" class="overlay off" >
+	<div class="pop_cap">
+		<div class="popup_st1" >
+			<h2 class="title">Foul</h2>
+			<a class="close" >&times;</a>
+			<div class="scrollcap">
+				<table class="pop_tb1">
+					<tr>
+						<td class="gray_bg2 loText"  colspan="3"  >팀명(HOME)</td>
+					</tr>
+					<tr>
+						<td class="hiText" colspan="3" style="width:50%;background:#fff">
+							00. 홍길동(2:00)
+						</td>
+					</tr>
+					<tr>
+						<td class="midText" style="width:calc(100% / 3)" ><a href="#" >1.차징</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >2.후킹</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >3.홀딩</a></td>
+					</tr>
+					<tr>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >4.슬래싱</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >5.클로스체킹</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >6.엘보잉</a></td>
+					</tr>
+					<tr>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >7.스피어링</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >8.버트엔딩</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >9.트리핑</a></td>
+					</tr>
+					<tr>
+						<td class="midText" style="width:calc(100% / 3)" ><a href="#" >10.인터페어런스</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >11.보딩</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >12.하이스틱</a></td>
+					</tr>
+					<tr>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >13.니잉</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" >14.투매니</a></td>
+						<td class="midText" style="width:calc(100% / 3)"><a href="#" > </a></td>
+					</tr>
+
+				</table>
+								
+				<a class="pop_bt1" href="javascript:penalty_sub_BT_off()"  >확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- E:: popup style5_sub -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- S::popup style6-->	
+<div id="shootout_BT" class="overlay off" >
+	<div class="pop_cap">
+		<div class="popup_st1" >
+			<h2 class="title">Shoot Out</h2>
+			<a class="close" >&times;</a>
+			<div class="scrollcap">
+				<table class="pop_tb6">
+
+					<tr>
+						<td style="width:40%">골리</br> 00. 홍길동</td>
+						<td style="width:20%"></td>
+						<td style="width:40%">골리</br> 00. 홍길동</td>
+					</tr> 
+				</table>
+				<div class="sc_cap">
+					<table class="pop_tb6a">
+						<tr>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+							<td  style="width:20%">1</td>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+						</tr>
+						<tr>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+							<td style="width:20%">2</td>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+						</tr>
+						<tr>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+							<td style="width:20%">3</td>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+						</tr>
+						<tr>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+							<td style="width:20%">4</td>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+						</tr>
+						<tr>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+							<td style="width:20%">5</td>
+							<td class="Gcheck"  style="width:40%">
+								<h6>O</h6>
+								<h6>X</h6>
+							</td>
+						</tr>
+
+					</table>
+				</div>
+				<table class="pop_tb6">
+					<tr>
+						<td style="width:40%">3</td>
+						<td style="width:20%">합계</td>
+						<td style="width:40%">4</td>
+					</tr>
+				</table>
+								
+				<a class="pop_bt1" href="javascript:shootout_off()"  >확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- E:: popup style5 -->
+
+
+
+</body>
+</html>
